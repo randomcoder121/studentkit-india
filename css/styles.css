@@ -1,0 +1,268 @@
+
+:root {
+  --primary: #3659e3;
+  --primary-dark: #2443bf;
+  --text: #172033;
+  --muted: #687386;
+  --background: #f8fafc;
+  --border: #e6eaf0;
+  --radius: 18px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-underline-offset: 4px;
+}
+
+.navbar-brand {
+  color: var(--text);
+  font-size: 1.45rem;
+  letter-spacing: -0.7px;
+}
+
+.brand-dot {
+  color: var(--primary);
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.hero-section {
+  background:
+    radial-gradient(ellipse at 85% 20%, #e2eaff 0%, transparent 42%),
+    var(--background);
+}
+
+.hero-section h1 {
+  max-width: 680px;
+  letter-spacing: -2px;
+  line-height: 1.12;
+}
+
+.hero-section .lead {
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.hero-card {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 18px 55px rgba(35, 54, 95, 0.08);
+}
+
+.status-dot {
+  color: #167b50;
+  background: #e5f7ee;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.mini-tool {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+
+.tool-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  color: var(--primary);
+  background: #edf1ff;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.section-padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.section-heading {
+  max-width: 650px;
+}
+
+.section-heading h2,
+.about-section h2,
+#services h2 {
+  letter-spacing: -0.8px;
+}
+
+.tool-card {
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #ffffff;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-3px);
+  border-color: #ccd6ff;
+  box-shadow: 0 14px 32px rgba(35, 54, 95, 0.07);
+}
+
+.tool-card .form-control {
+  padding: 11px 12px;
+  border-color: #dce2eb;
+}
+
+.tool-card .form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(54, 89, 227, 0.12);
+}
+
+.result-box {
+  display: none;
+  padding: 12px;
+  color: #174c37;
+  background: #e9f8f0;
+  border: 1px solid #c8ecd9;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.result-box.show {
+  display: block;
+}
+
+.result-box.error {
+  color: #9c2525;
+  background: #fff0f0;
+  border-color: #f4cccc;
+}
+
+.about-section {
+  background: var(--background);
+  border-top: 1px solid #f0f2f6;
+  border-bottom: 1px solid #f0f2f6;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.footer-brand {
+  color: var(--text);
+}
+
+.footer-link {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+@media (max-width: 767.98px) {
+  .hero-section h1 {
+    font-size: 2.65rem;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-card {
+    padding: 22px;
+  }
+
+  .section-padding {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .tool-card {
+    padding: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+
+/* Resume builder and accessibility improvements */
+
+.resume-preview {
+  color: #172033;
+  line-height: 1.7;
+}
+
+.resume-preview p {
+  white-space: pre-line;
+}
+
+.form-control,
+.btn {
+  min-height: 44px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(54, 89, 227, 0.45);
+  outline-offset: 3px;
+}
+
+@media (max-width: 575.98px) {
+  .resume-preview {
+    padding: 18px;
+  }
+
+  .hero-section .btn {
+    width: 100%;
+  }
+}
+

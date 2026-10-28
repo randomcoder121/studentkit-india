@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+    content="Create a simple resume for your first job or internship using StudentKit.">
+
+  <title>Free Resume Builder | StudentKit India</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .resume-preview {
+      background: #fff;
+      border: 1px solid #dfe4ec;
+      padding: 30px;
+      min-height: 500px;
+      overflow-wrap: anywhere;
+    }
+
+    .resume-preview h2 {
+      color: #2443bf;
+      border-bottom: 2px solid #2443bf;
+      padding-bottom: 8px;
+    }
+
+    .resume-preview .resume-section {
+      margin-top: 22px;
+    }
+
+    @media print {
+      body * {
+        visibility: hidden !important;
+      }
+
+      #resumePreview, #resumePreview * {
+        visibility: visible !important;
+      }
+
+      #resumePreview {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        min-height: auto;
+        border: none;
+        padding: 0;
+      }
+
+      .resume-preview h2 {
+        color: #2443bf !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      @page {
+        size: A4;
+        margin: 15mm;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar bg-white border-bottom">
+    <div class="container py-2">
+      <a class="navbar-brand fw-bold" href="index.html">
+        StudentKit<span class="brand-dot">.</span>
+      </a>
+      <a href="index.html#tools" class="btn btn-outline-primary rounded-pill">
+        All tools
+      </a>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="mb-4">
+      <span class="eyebrow">FREE CAREER TOOL</span>
+      <h1 class="fw-bold mt-2">Resume builder</h1>
+      <p class="text-secondary">
+        Fill in your details to create a simple resume.
+        Your entries stay in this browser page; this demo does not upload them.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <form id="resumeForm" class="tool-card">
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full name *</label>
+            <input id="fullName" class="form-control"
+              maxlength="100" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" type="email" maxlength="150"
+              class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input id="phone" type="tel" maxlength="30"
+              class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label for="location" class="form-label">City</label>
+            <input id="location" maxlength="100" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label for="objective" class="form-label">
+              Career objective
+            </label>
+            <textarea id="objective" class="form-control" rows="3"
+              maxlength="1000"
+              placeholder="Briefly describe your career goals"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="education" class="form-label">
+              Education *
+            </label>
+            <textarea id="education" class="form-control" rows="3"
+              maxlength="2000" required
+              placeholder="Degree, college, graduation year"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="skills" class="form-label">Skills</label>
+            <textarea id="skills" class="form-control" rows="2"
+              maxlength="1000"
+              placeholder="HTML, CSS, JavaScript, communication"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="experience" class="form-label">
+              Experience or projects
+            </label>
+            <textarea id="experience" class="form-control" rows="4"
+              maxlength="3000"
+              placeholder="Projects, internships, achievements"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">
+            Generate resume
+          </button>
+
+          <p class="small text-secondary mt-3 mb-0">
+            Use accurate information. Don't include sensitive personal
+            details such as identity numbers or bank information.
+          </p>
+        </form>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="d-flex justify-content-between align-items-center mb-3 gap-2">
+          <h2 class="h5 fw-bold mb-0">Resume preview</h2>
+          <button id="printResume" class="btn btn-outline-primary"
+            type="button">
+            Print / Save PDF
+          </button>
+        </div>
+
+        <article id="resumePreview" class="resume-preview">
+          <h1 class="h2 fw-bold" id="previewName">Your Name</h1>
+          <p id="previewContact" class="text-secondary">
+            Email · Phone · City
+          </p>
+
+          <div class="resume-section">
+            <h2 class="h5">Career Objective</h2>
+            <p id="previewObjective">Your career objective will appear here.</p>
+          </div>
+
+          <div class="resume-section">
+            <h2 class="h5">Education</h2>
+            <p id="previewEducation">Your education details will appear here.</p>
+          </div>
+
+          <div class="resume-section">
+            <h2 class="h5">Skills</h2>
+            <p id="previewSkills">Your skills will appear here.</p>
+          </div>
+
+          <div class="resume-section">
+            <h2 class="h5">Experience & Projects</h2>
+            <p id="previewExperience">
+              Your experience and projects will appear here.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container py-4">
+      <a href="index.html" class="footer-link">Back to StudentKit</a>
+      <span class="mx-2">·</span>
+      <a href="privacy.html" class="footer-link">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const fields = {
+      fullName: "previewName",
+      objective: "previewObjective",
+      education: "previewEducation",
+      skills: "previewSkills",
+      experience: "previewExperience"
+    };
+
+    const form = document.getElementById("resumeForm");
+
+    function updatePreview() {
+      for (const [inputId, outputId] of Object.entries(fields)) {
+        const input = document.getElementById(inputId);
+        const output = document.getElementById(outputId);
+
+        output.textContent =
+          input.value.trim() ||
+          (inputId === "fullName" ? "Your Name" : "Not provided");
+      }
+
+      const contact = [
+        document.getElementById("email").value.trim(),
+        document.getElementById("phone").value.trim(),
+        document.getElementById("location").value.trim()
+      ].filter(Boolean);
+
+      document.getElementById("previewContact").textContent =
+        contact.join(" · ") || "Add your contact details";
+    }
+
+    form.addEventListener("input", updatePreview);
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      updatePreview();
+      document.getElementById("previewName").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+
+    document.getElementById("printResume").addEventListener("click", function () {
+      updatePreview();
+      window.print();
+    });
+
+    updatePreview();
+  </script>
+</body>
+</html>

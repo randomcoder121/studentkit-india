@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Free student tools for India: percentage calculator, CGPA calculator, study resources and career support."
+    />
+
+    <meta name="theme-color" content="#f8fafc" />
+    <title>StudentKit India | Free Student Tools</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+      <div class="container py-2">
+        <a class="navbar-brand fw-bold" href="#home">
+          StudentKit<span class="brand-dot">.</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="resume.html">Resume builder</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#tools">Free tools</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary rounded-pill px-4" href="#services"
+                >My services</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero -->
+      <section id="home" class="hero-section">
+        <div class="container py-5">
+          <div class="row align-items-center g-5 py-lg-5">
+            <div class="col-lg-7">
+              <span class="eyebrow">YOUR FREE STUDENT TOOLKIT</span>
+
+              <h1 class="display-4 fw-bold mt-3">
+                Make student life
+                <span class="text-primary">a little easier.</span>
+              </h1>
+
+              <p class="lead text-secondary mt-3">
+                Free, simple tools to help you calculate marks, plan your next
+                step and prepare for your career.
+              </p>
+
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a
+                  href="#tools"
+                  class="btn btn-primary btn-lg rounded-pill px-4"
+                >
+                  Explore free tools
+                </a>
+                <a
+                  href="#services"
+                  class="btn btn-outline-dark btn-lg rounded-pill px-4"
+                >
+                  Need a website?
+                </a>
+              </div>
+
+              <p class="small text-secondary mt-4 mb-0">
+                No account required. Use the calculators directly.
+              </p>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="hero-card">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-semibold">Your toolkit</span>
+                  <span class="status-dot">Ready to use</span>
+                </div>
+
+                <div class="mini-tool mt-4">
+                  <span class="tool-icon">%</span>
+                  <div>
+                    <div class="fw-semibold">Percentage calculator</div>
+                    <div class="small text-secondary">Calculate your marks</div>
+                  </div>
+                </div>
+
+                <div class="mini-tool">
+                  <span class="tool-icon">★</span>
+                  <div>
+                    <div class="fw-semibold">CGPA calculator</div>
+                    <div class="small text-secondary">
+                      Estimate your average
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mini-tool">
+                  <span class="tool-icon">↗</span>
+                  <div>
+                    <div class="fw-semibold">Career resources</div>
+                    <div class="small text-secondary">
+                      Prepare for opportunities
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tools -->
+      <section id="tools" class="section-padding">
+        <div class="container">
+          <div class="section-heading mb-4">
+            <span class="eyebrow">FREE RESOURCES</span>
+            <h2 class="fw-bold mt-2">Tools you can use today</h2>
+            <p class="text-secondary">
+              Choose a tool and get an answer in seconds.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <!-- Percentage calculator -->
+            <div class="col-md-6 col-lg-4">
+              <div class="tool-card h-100">
+                <div class="tool-icon mb-3">%</div>
+                <h3 class="h5 fw-bold">Percentage calculator</h3>
+                <p class="text-secondary">
+                  Find the percentage of marks you scored.
+                </p>
+
+                <form id="percentageForm">
+                  <div class="mb-3">
+                    <label for="obtainedMarks" class="form-label">
+                      Marks obtained
+                    </label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="obtainedMarks"
+                      min="0"
+                      step="any"
+                      placeholder="e.g. 425"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="totalMarks" class="form-label">
+                      Total possible marks
+                    </label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="totalMarks"
+                      min="0.01"
+                      step="any"
+                      placeholder="e.g. 500"
+                      required
+                    />
+                  </div>
+
+                  <button type="submit" class="btn btn-primary w-100">
+                    Calculate percentage
+                  </button>
+                  <p
+                    id="percentageResult"
+                    class="result-box mt-3 mb-0"
+                    aria-live="polite"
+                  ></p>
+                </form>
+              </div>
+            </div>
+
+            <!-- CGPA calculator -->
+            <div class="col-md-6 col-lg-4">
+              <div class="tool-card h-100">
+                <div class="tool-icon mb-3">★</div>
+                <h3 class="h5 fw-bold">CGPA average calculator</h3>
+                <p class="text-secondary">
+                  Estimate the simple average of semester grade points.
+                </p>
+
+                <form id="cgpaForm">
+                  <div class="mb-3">
+                    <label for="semesterGrades" class="form-label">
+                      Semester grade points
+                    </label>
+                    <textarea
+                      id="semesterGrades"
+                      class="form-control"
+                      rows="3"
+                      placeholder="e.g. 8.2, 7.5, 9.0"
+                      required
+                    ></textarea>
+                    <div class="form-text">
+                      Separate values with commas or spaces.
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary w-100">
+                    Calculate average
+                  </button>
+                  <p
+                    id="cgpaResult"
+                    class="result-box mt-3 mb-0"
+                    aria-live="polite"
+                  ></p>
+                </form>
+
+                <p class="small text-secondary mt-3 mb-0">
+                  This is a simple average, not a credit-weighted CGPA. Follow
+                  your university's calculation rules.
+                </p>
+              </div>
+            </div>
+
+            <!-- Future tool -->
+            <div class="col-md-6 col-lg-4">
+              <div class="tool-card h-100">
+                <div class="tool-icon mb-3">✎</div>
+                <h3 class="h5 fw-bold">Resume builder</h3>
+                <p class="text-secondary">
+                  Create a professional resume for your first job or internship.
+                </p>
+                <a href="resume.html" class="btn btn-outline-primary w-100">
+                  Build my resume
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section-padding about-section">
+        <div class="container">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="eyebrow">ABOUT STUDENTKIT</span>
+              <h2 class="fw-bold mt-2">
+                Useful tools, without the complexity.
+              </h2>
+              <p class="text-secondary mb-0">
+                StudentKit aims to make common student tasks easier with simple,
+                accessible tools and practical career resources. We're starting
+                small and improving based on user feedback.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a
+                href="#tools"
+                class="btn btn-outline-primary rounded-pill px-4"
+              >
+                Try the tools
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="section-padding">
+        <div class="container">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="eyebrow">WEBSITE SERVICES</span>
+              <h2 class="fw-bold mt-2">Need a simple website?</h2>
+              <p class="text-secondary">
+                I build responsive portfolio pages, landing pages and simple
+                websites for students, freelancers and small businesses.
+              </p>
+              <p class="small text-secondary mb-0">
+                Contact me for a quote. Final pricing and scope will be agreed
+                before work begins.
+              </p>
+            </div>
+
+            <div class="col-lg-4">
+              <!-- Replace this placeholder with your real contact email. -->
+              <a
+                class="btn btn-primary btn-lg rounded-pill w-100"
+                href="mailto:kaniskadas81@gmail.com?subject=Website%20enquiry"
+              >
+                Contact Us
+              </a>
+              <p class="small text-secondary mt-2 mb-0">
+                <!-- Update this email address before publishing. -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container py-4">
+        <div class="row align-items-center g-3">
+          <div class="col-md-6">
+            <a href="#home" class="fw-bold text-decoration-none footer-brand">
+              StudentKit.
+            </a>
+            <p class="small text-secondary mb-0 mt-1">
+              Free tools for students and freshers.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="privacy.html" class="footer-link">Privacy</a>
+            <span class="mx-2 text-secondary">·</span>
+            <a href="terms.html" class="footer-link">Terms</a>
+          </div>
+        </div>
+
+        <hr />
+        <p class="small text-secondary mb-0">
+          © <span id="currentYear"></span> StudentKit. Built to make student
+          life easier.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Your JavaScript -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
